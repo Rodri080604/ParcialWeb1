@@ -17,6 +17,17 @@ namespace PrimerParcial.Data
         public DbSet<Ingredient> Ingredients { get; set; }
         public DbSet<Category> Categories { get; set; }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseSqlServer(
+                    "Server=DESKTOP-67EHGLH;Database=Recetas;Trusted_Connection=True;MultipleActiveResultSets=true;Encrypt=False;TrustServerCertificate=True"
+               );
+            }
+        }
+
+
         // Opcional: Configuración de la relación uno a muchos
         // Esto a menudo se puede omitir si las convenciones de EF Core se cumplen,
         // pero es buena práctica para claridad, especialmente en relaciones complejas.
