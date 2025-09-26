@@ -9,9 +9,11 @@ namespace PrimerParcial.Models
         public int Id { get; set; }
 
         [Required]
+        [StringLength(300)]
         public string Name { get; set; } // Ejemplo: "Pastel de Chocolate"
 
         [Required]
+        [StringLength(100)]
         public string Description { get; set; } // Ejemplo: "Receta fácil y deliciosa..."
 
         // Clave Foránea (FK): Vincula esta receta a una categoría

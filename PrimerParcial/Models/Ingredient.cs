@@ -8,9 +8,11 @@ namespace PrimerParcial.Models
         public int Id { get; set; }
 
         [Required]
+        [StringLength(100)]
         public string Name { get; set; } // Ejemplo: "Harina de Trigo"
 
         [Required]
+        [StringLength(50)]
         public string Quantity { get; set; } // Ejemplo: "2 tazas" o "500 gramos"
 
         // --- Relaciones de Entity Framework Core ---
