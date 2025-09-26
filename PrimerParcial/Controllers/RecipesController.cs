@@ -59,7 +59,7 @@ namespace PrimerParcial.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Name,Description,CategoryId")] Recipe recipe)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 _context.Add(recipe);
                 await _context.SaveChangesAsync();
@@ -98,7 +98,7 @@ namespace PrimerParcial.Controllers
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 try
                 {
